@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
+import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 
 /**
@@ -65,7 +66,7 @@ public class Vector implements Cloneable{
             .collect(Collectors.toList()));
     }
 
-    public double norm() {
+    public double normMax() {
         double m = Math.abs(getAt(0));
         for (int i = 0; i < size(); i++) {
             if (Math.abs(getAt(i)) > m) {
@@ -73,6 +74,10 @@ public class Vector implements Cloneable{
             }
         }
         return m;
+    }
+
+    public double norm() {
+        return Math.sqrt(list.stream().map(a -> a*a).reduce(0D, Double::sum));
     }
 
     public Vector multiplyByNumber(Double number) {
@@ -118,6 +123,14 @@ public class Vector implements Cloneable{
             for (int j = 0; j < matrix.sizeColumns(); j++) {
                 result.add(matrix.getElement(i, j));
             }
+        }
+        return result;
+    }
+
+    public Vector getSubVectorFrom(int k) {
+        Vector result = new Vector();
+        for (int i = k; i < size(); i++) {
+            result.add(getAt(i));
         }
         return result;
     }

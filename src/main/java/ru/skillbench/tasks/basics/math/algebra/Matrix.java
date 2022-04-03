@@ -172,6 +172,16 @@ public class Matrix implements Cloneable{
         return vector;
     }
 
+    public Matrix multiplyByNumber(Double number) {
+        Matrix result = clone();
+        for (int i = 0; i < sizeRows(); i++) {
+            for (int j = 0; j < sizeColumns(); j++) {
+                result.setElement(i, j, getElement(i, j) * number);
+            }
+        }
+        return result;
+    }
+
     @Override
     public Matrix clone() {
         List<Vector> vectors = new ArrayList<>(matrix.size());

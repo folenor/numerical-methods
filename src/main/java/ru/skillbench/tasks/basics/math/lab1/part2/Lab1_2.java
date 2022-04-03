@@ -1,7 +1,7 @@
 package ru.skillbench.tasks.basics.math.lab1.part2;
 
 import org.json.simple.parser.ParseException;
-import ru.skillbench.tasks.basics.math.SLAUsolvers.Solver;
+import ru.skillbench.tasks.basics.math.solvers.Solver;
 import ru.skillbench.tasks.basics.math.algebra.Matrix;
 import ru.skillbench.tasks.basics.math.algebra.Vector;
 import ru.skillbench.tasks.basics.math.util.ObjectParser;
@@ -19,7 +19,7 @@ public class Lab1_2 {
         System.out.println(matrix);
         Vector vector = parser.getColumn();
         System.out.println("Вектор столбец: " + vector);
-        Vector result = Solver.tridiagonalAlgorithm(matrix, vector);
+        Vector result = Solver.diagonalAlgorithm(matrix, vector);
         System.out.println("Ответ: " + result);
     }
 }

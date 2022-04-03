@@ -1,7 +1,7 @@
 package ru.skillbench.tasks.basics.math.lab1.part3;
 
 import org.json.simple.parser.ParseException;
-import ru.skillbench.tasks.basics.math.SLAUsolvers.Solver;
+import ru.skillbench.tasks.basics.math.solvers.Solver;
 import ru.skillbench.tasks.basics.math.algebra.Matrix;
 import ru.skillbench.tasks.basics.math.algebra.Vector;
 import ru.skillbench.tasks.basics.math.util.ObjectParser;
@@ -24,7 +24,7 @@ public class Lab1_3 {
         Vector result = Solver.simpleIterationMethod(matrix, vector, epsilon);
         System.out.println("Ответ: " + result);
 
-        result = Solver.SeidelMethod(matrix, vector, epsilon);
+        result = Solver.seidelMethod(matrix, vector, epsilon);
         System.out.println("Методом Зейделя: " + result);
     }
 }
