@@ -75,4 +75,10 @@ public class ObjectParser {
         return (Double) jsonObject.get("epsilon");
     }
 
+    public double getParameter(String name) throws IOException, ParseException {
+        Object obj = parse(file);
+        JSONObject jsonObject = (JSONObject) obj;
+        return (Double) jsonObject.get(name);
+    }
+
 }

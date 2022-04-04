@@ -33,6 +33,10 @@ public class Vector implements Cloneable{
         }
     }
 
+    public Vector(Double... elements) {
+        this.list = List.of(elements);
+    }
+
     public List<Double> getList() {
         return list;
     }
