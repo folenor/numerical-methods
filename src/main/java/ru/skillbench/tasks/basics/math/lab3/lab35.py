@@ -3,8 +3,8 @@ import math
 
 target = '''
 y = x / ((2 * x + 7) * (3 * x + 4))
-x0 = -1
-x_k = 1
+x0 = -2
+x_k = 2
 h1 = 0.5
 h2 = 0.25
 '''
@@ -65,17 +65,17 @@ if __name__ == '__main__':
         y = get_y(X)
         print(f'y = {y}')
 
-        print('Rectangle method:')
+        print('Прямоугольник:')
         res_rec = rectangle(X, h_i)
-        print(f'Value = {res_rec}')
+        print(f'Значение = {res_rec}')
 
-        print('Trapeze method:')
+        print('Трапеция:')
         res_trp = trapeze(X, h_i)
-        print(f'Value = {res_trp}')
+        print(f'Значение = {res_trp}')
 
-        print('Simpson method:')
+        print('Симпсон:')
         res_smp = simpson(X, h_i)
-        print(f'Value = {res_smp}')
+        print(f'Значение = {res_smp}')
         print()
 
         res.append({"h": h_i,
@@ -85,8 +85,8 @@ if __name__ == '__main__':
 
     err = runge_Romberg(res, true_value)
 
-    print('All errors:')
-    print(f'True value of integral: {true_value}')
-    print('Rectangle specified value: {}, rectangle absolute error: {}'.format(err['rec'][0], err['rec'][1]))
-    print('Trapeze   specified value: {}, trapeze absolute error {}'.format(err['trp'][0], err['trp'][1]))
-    print('Simpson   specified value: {}, Simpson absolute error {}'.format(err['smp'][0], err['smp'][1]))
+    print('Ошибки:')
+    print(f'Истинное значение: {true_value}')
+    print('Прямоугольник уточненное значение: {}, прямоугольник абсолютная ошибка: {}'.format(err['rec'][0], err['rec'][1]))
+    print('Трапеция уточненное значение: {}, прямоугольник абсолютная ошибка {}'.format(err['trp'][0], err['trp'][1]))
+    print('Симпсон уточненное значение: {}, прямоугольник абсолютная ошибка {}'.format(err['smp'][0], err['smp'][1]))

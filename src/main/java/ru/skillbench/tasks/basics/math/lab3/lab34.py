@@ -1,4 +1,5 @@
-target = '''X* = 0.2
+target = '''Вариант:
+X* = 0.2
 i:         0        1        2         3       4
 Xi:      -0.2      0.0      0.2       0.4     0.6
 Yi:    -0.40136    0.0    0.40136  0.81152   1.2435
@@ -32,5 +33,5 @@ if __name__ == '__main__':
     x0 = 0.2
     x_i = [-0.2, 0.0, 0.2, 0.4, 0.6]
     y_i = [-0.40136, 0.0, 0.40136, 0.81152, 1.2435]
-    print(f'First derivative = {round(first_derivative(x_i, y_i, x0), 6)}')
-    print(f'Second derivative = {round(second_derivative(x_i, y_i, x0), 6)}')
+    print(f'Первая производная = {round(first_derivative(x_i, y_i, x0), 6)}')
+    print(f'Вторая производная = {round(second_derivative(x_i, y_i, x0), 6)}')
