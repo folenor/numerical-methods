@@ -1,7 +1,13 @@
 import matplotlib.pyplot as plt
 from NM_1_1 import LUP_solve
 from NM_1_1 import LUP_decompose
-from NM_1_1 import get_LU
+from NM_1_1 import ge
+
+
+
+
+
+t_LU
 
 target = '''
 i:        0        1        2     3       4       5
